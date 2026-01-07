@@ -1,12 +1,10 @@
 #root {
-	max-width: 1280px;
 	margin: 0 auto;
 	padding: 2rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-	background: #f5f5f5;
 }
 
 .swap-container {
@@ -81,9 +79,9 @@ form {
 	font-weight: 400;
 }
 
-.currency-select {
-	min-width: 120px;
-	padding: 0.75rem 1rem;
+.currency-select-container {
+	min-width: 140px;
+	padding: 0.5rem 0.75rem 0.5rem 0.65rem;
 	border: none;
 	border-radius: 14px;
 	font-size: 1rem;
@@ -94,15 +92,37 @@ form {
 	outline: none;
 	transition: all 0.2s;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-	appearance: none;
-	background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%239ca3af' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
-	background-repeat: no-repeat;
-	background-position: right 0.75rem center;
-	padding-right: 2.5rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
 }
 
-.currency-select:hover {
+.currency-select-container:hover {
 	background-color: #f9fafb;
+}
+
+.currency-icon {
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	object-fit: contain;
+	background: #f3f4f6;
+}
+
+.currency-select {
+	border: none;
+	background: transparent;
+	width: 100%;
+	font-size: 1rem;
+	font-weight: 500;
+	color: #1f2937;
+	cursor: pointer;
+	outline: none;
+	appearance: none;
+	padding-right: 1.75rem;
+	background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%239ca3af' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 0.25rem center;
 }
 
 .swap-icon {
@@ -169,12 +189,19 @@ form {
 	margin-top: 0.5rem;
 }
 
-.confirm-button:hover {
+.confirm-button:hover:not(:disabled) {
 	background: #6ee7b7;
 	transform: translateY(-1px);
 	box-shadow: 0 4px 12px rgba(134, 239, 172, 0.4);
 }
 
-.confirm-button:active {
+.confirm-button:active:not(:disabled) {
 	transform: translateY(0);
+}
+
+.confirm-button:disabled {
+	background: #d1fae5;
+	color: #047857;
+	cursor: not-allowed;
+	opacity: 0.7;
 }
