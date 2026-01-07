@@ -180,7 +180,7 @@ function App() {
 		<div className='swap-container'>
 			<form onSubmit={e => e.preventDefault()}>
 				<div className='swap-section'>
-					<div className='currency-input-group'>
+					<div className='currency-input-group input-currency-input-group'>
 						<label htmlFor='input-amount'>Amount</label>
 						<div className='input-row'>
 							<div className='amount-section'>
@@ -191,6 +191,7 @@ function App() {
 									className='amount-input'
 									value={inputAmount}
 									onChange={handleInputAmountChange}
+									autoFocus
 								/>
 							</div>
 							<div
@@ -228,7 +229,7 @@ function App() {
 						</button>
 					</div>
 
-					<div className='currency-input-group'>
+					<div className='currency-input-group output-currency-input-group'>
 						<label htmlFor='output-amount'>Converted to</label>
 						<div className='input-row'>
 							<div className='amount-section'>

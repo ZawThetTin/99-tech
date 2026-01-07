@@ -11,8 +11,8 @@
 	width: 100%;
 	max-width: 440px;
 	padding: 2.5rem;
-	background: white;
-	border-radius: 32px;
+	background: #f3f3f3;
+	border-radius: 52px;
 	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
 
@@ -25,14 +25,14 @@ form {
 .swap-section {
 	display: flex;
 	flex-direction: column;
-	gap: 0;
+	gap: 4px;
 	position: relative;
 }
 
 .currency-input-group {
-	background: #f8f9fa;
-	border-radius: 20px;
-	padding: 1.5rem;
+	background: white;
+	border-radius: 40px;
+	padding: 2rem;
 }
 
 .currency-input-group label {
@@ -42,6 +42,19 @@ form {
 	font-weight: 400;
 	margin-bottom: 0.75rem;
 	text-align: left;
+}
+
+.input-currency-input-group {
+	padding-bottom: 3rem;
+}
+
+.output-currency-input-group {
+	padding-block: 2.5rem;
+}
+
+#output-amount {
+	color: #6b7280;
+	cursor: not-allowed;
 }
 
 .input-row {
@@ -60,7 +73,6 @@ form {
 
 .amount-input {
 	font-size: 2.5rem;
-	font-weight: 600;
 	border: none;
 	outline: none;
 	color: #1f2937;
@@ -80,10 +92,10 @@ form {
 }
 
 .currency-select-container {
-	min-width: 140px;
-	padding: 0.5rem 0.75rem 0.5rem 0.65rem;
-	border: none;
-	border-radius: 14px;
+	min-width: 120px;
+	padding: 0.25rem 0.75rem 0.25rem 0.25rem;
+	border: 2px solid #f3f3f3;
+	border-radius: 500px;
 	font-size: 1rem;
 	font-weight: 500;
 	color: #1f2937;
@@ -91,7 +103,6 @@ form {
 	cursor: pointer;
 	outline: none;
 	transition: all 0.2s;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
@@ -109,8 +120,8 @@ form {
 }
 
 .currency-icon {
-	width: 28px;
-	height: 28px;
+	width: 40px;
+	height: 40px;
 	border-radius: 50%;
 	object-fit: contain;
 	background: #f3f4f6;
@@ -118,8 +129,8 @@ form {
 }
 
 .currency-icon-fallback {
-	width: 28px;
-	height: 28px;
+	width: 40px;
+	height: 40px;
 	border-radius: 50%;
 	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 	color: white;
@@ -127,7 +138,7 @@ form {
 	align-items: center;
 	justify-content: center;
 	font-weight: 600;
-	font-size: 0.875rem;
+	font-size: 1.25rem;
 	flex-shrink: 0;
 }
 
@@ -150,7 +161,6 @@ form {
 	outline: none;
 	appearance: none;
 	padding-right: 1.75rem;
-	background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%239ca3af' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	background-position: right 0.25rem center;
 	border: 5px solid red;
@@ -162,8 +172,13 @@ form {
 .swap-icon {
 	display: flex;
 	justify-content: center;
-	margin: -1.25rem 0;
 	z-index: 1;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border: 4px solid #f3f3f3;
+	border-radius: 50%;
 }
 
 .swap-button {
@@ -179,7 +194,6 @@ form {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .swap-button:hover {
@@ -215,7 +229,7 @@ form {
 	background: #86efac;
 	color: #166534;
 	border: none;
-	border-radius: 16px;
+	border-radius: 500px;
 	font-size: 1.125rem;
 	font-weight: 600;
 	cursor: pointer;
