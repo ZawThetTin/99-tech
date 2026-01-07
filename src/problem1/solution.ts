@@ -23,8 +23,11 @@ const sum_to_n_b = (n: number): number => {
 	 * Just a different approach. Not recommended for large n due to potential stack overflow
 	 */
 
-	const sum_to_n_recursive = (n: number): number =>
-		n + sum_to_n_recursive(n - 1);
+	const sum_to_n_recursive = (n: number): number => {
+		if (n === 1) return 1;
+
+		return n + sum_to_n_recursive(n - 1);
+	};
 
 	return sum_to_n_recursive(n);
 };
@@ -49,5 +52,5 @@ const sum_to_n_b = (n: number): number => {
 const sum_to_n_c = (n: number): number => (n * (n + 1)) / 2;
 
 console.log(sum_to_n_a(10));
-// console.log(sum_to_n_b(10)); // This one gives stack overflow so need to comment it out
+console.log(sum_to_n_b(10));
 console.log(sum_to_n_c(10));
